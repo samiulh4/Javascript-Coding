@@ -1,10 +1,10 @@
 // Destructuring In Object
-const employee ={
+const employee = {
     id: 1,
     name: "Md.Samiul Haque",
     age: 30,
     department: "Development",
-    address:{
+    address: {
         country: "Bangladesh",
         city: "Dhaka",
     }
@@ -38,7 +38,7 @@ const employee ={
 
 
 // Also Possible destructur in function
-function displayEmployee(name, age){
+function displayEmployee(name, age) {
     console.log(`The Employee Name : ${employee.name} & Age Is : ${employee.age}`);
 }
 
@@ -60,12 +60,12 @@ const fruits = ['apple', 'banana', 'mango', 'pineapple'];
 
 //  Destructuring In Array & Object
 const groceryList = [
-    {item: 'Apple', price: 28, category: 'Fruits'},
-    {item: 'Banana', price: 30, category: 'Fruits'},
-    {item: 'Mango', price: 50, category: 'Fruits'},
-    {item: 'Pineapple', price: 39, category: 'Fruits'},
-    {item: 'Eagg', price: 40, category: 'Mise'},
-    {item: 'Milk', price: 65, category: 'Mise'},
+    { item: 'Apple', price: 28, category: 'Fruits' },
+    { item: 'Banana', price: 30, category: 'Fruits' },
+    { item: 'Mango', price: 50, category: 'Fruits' },
+    { item: 'Pineapple', price: 39, category: 'Fruits' },
+    { item: 'Eagg', price: 40, category: 'Mise' },
+    { item: 'Milk', price: 65, category: 'Mise' },
 ];
 
 //console.log(groceryList[0].item);
@@ -92,5 +92,41 @@ const company = {
 
 // console.log(company.locations[0]);
 
-const {locations: [,loc]} = company;
-console.log(loc);
+//const { locations: [, loc] } = company;
+//console.log(loc);
+
+const users = [
+    ['Md.Samiul', 'Haque'],
+    ['Natasha', 'Sinha'],
+    ['Jannatul', 'Ferdos'],
+];
+[
+    {
+        firstName: 'Md.Samiul',
+        lastName: 'Haque',
+    },
+    {
+        firstName: 'Natasha',
+        lastName: 'Sinha',
+    },
+    {
+        firstName: 'Jannatul',
+        lastName: 'Ferdos',
+    },
+];
+
+// const userObj = users.map(user => {
+//     return { firstName: user[0], lastName: user[1] }
+// });
+
+// const userObj = users.map(([firstName, lastName]) => {
+//     return { firstName: firstName, lastName: lastName }
+// });
+
+
+const userObj = users.map(([firstName, lastName]) => {
+    return { firstName, lastName }
+});
+
+
+console.log(userObj);
